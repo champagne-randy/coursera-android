@@ -19,10 +19,9 @@ public class LoginScreen extends Activity {
 
         final EditText uname = (EditText) findViewById(R.id.username_edittext);
         final EditText passwd = (EditText) findViewById(R.id.password_edittext);
-
         final Button loginButton = (Button) findViewById(R.id.login_button);
+        
         loginButton.setOnClickListener(new OnClickListener() {
-
             public void onClick(View v) {
 
                 if (checkPassword(uname.getText(), passwd.getText())) {

@@ -1,0 +1,98 @@
+Q: 	Suppose the user starts the application, which brings up ActivityOne. Next, suppose the user
+	presses the Button to start ActivityTwo, and that ActivityTwo then appears on the screen.
+
+	List the Activity lifecycle methods that have been invoked on ActivityOne and on
+	ActivityTwo, since the application started, in the order that they occurred.
+	
+R:	Activity one		-- wrong
+		onCreate()
+		onStart()
+		onResume()
+		onPause()
+	
+	Activity two
+		onCreate()
+		onStart()
+		onResume()
+		
+A:	Lab-ActivityOne(3117): Entered the onCreate() method
+	Lab-ActivityOne(3117): Entered the onStart() method
+	Lab-ActivityOne(3117): Entered the onResume() method
+	Lab-ActivityOne(3117): Entered the onPause() method
+	
+	Lab-ActivityTwo(3117): Entered the onCreate() method
+	Lab-ActivityTwo(3117): Entered the onStart() method
+	Lab-ActivityTwo(3117): Entered the onResume() method
+	
+	Lab-ActivityOne(3117): Entered the onStop() method
+
+		
+		
+------------------------------------------------------------------------------------------------------------------
+
+Q:	Next, suppose the user navigates back to ActivityOne by pressing the “Close Activity”
+	Button of ActivityTwo. ActivityTwo closes and then ActivityOne reappears. Starting where
+	you left off after the previous step:
+	
+	List the Activity lifecycle methods that have been invoked on ActivityOne and on
+	ActivityTwo, in the order they occurred.
+	
+R:	Activity two		-- wrong
+		onPause()
+		onStop()
+		onDestroy()
+		
+	Activity one
+		onResume()	
+		
+A:	Lab-ActivityTwo(3117): Entered the onPause() method
+
+	Lab-ActivityOne(3117): Entered the onRestart() method
+	Lab-ActivityOne(3117): Entered the onStart() method
+	Lab-ActivityOne(3117): Entered the onResume() method
+	
+	Lab-ActivityTwo(3117): Entered the onStop() method
+	Lab-ActivityTwo(3117): Entered the onDestroy() method	
+
+		
+		
+------------------------------------------------------------------------------------------------------------------
+
+Q:	Next, the user presses the Button to start ActivityTwo again. Once ActivityTwo appears, the
+	user presses the Home Key on the device. Starting where you left off after the previous step:
+	
+	List the Activity lifecycle methods that have been invoked on ActivityOne and on
+	ActivityTwo, in the order they occurred.
+		
+R:	Activity one:		-- correct
+		onPause()
+	
+	Activity two:	
+		onCreate()
+		onStart()
+		onResume()
+	
+	Activity one:
+		onStop()
+		
+	Activity two:
+		onPause()
+		onStop()	
+
+		
+		
+------------------------------------------------------------------------------------------------------------------
+
+Q:	Next, the user starts the application again, by clicking on its icon in the Launcher. Once the
+	application has restarted, and starting where you left off after the previous step:
+	
+	List the Activity lifecycle methods that have been invoked on ActivityOne and on
+	ActivityTwo, in the order they occurred.
+	
+R:	Activity two:		-- correct
+		onRestart()
+		onStart()
+		onResume()
+		
+		
+		
